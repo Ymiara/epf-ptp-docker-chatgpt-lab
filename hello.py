@@ -33,6 +33,6 @@ def chatgpt2():
         model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": demande}]
     )
-    return completion['choices'][0]['demande']['content']
+    return completion['choices'][0]['message']['content']
 
 
