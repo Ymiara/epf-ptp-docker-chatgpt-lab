@@ -27,11 +27,12 @@ def chatgpt2():
     args = request.args
     message =args.get("message")
     language =args.get("language")
+    demande = f"Write{message} in {language}"
     print(message)
     print(language)
     completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
-        messages=[{"role": "user", "content": f"Write{message} in {language}"}]
+        messages=[{"role": "user", "content": demande}]
     )
     return completion['choices'][0]['message']['content']
 
